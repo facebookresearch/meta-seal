@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Validate HTML
+      run: |
+        echo "Checking HTML files exist..."
+        test -f index.html || exit 1
+        echo "✓ index.html exists"
+    
+    - name: Validate static assets
+      run: |
+        echo "Checking static directories..."
+        test -d static/css || exit 1
+        test -d static/js || exit 1
+        test -d static/images || exit 1
+        echo "✓ All static directories exist"
+    
+    - name: Test website can load
+      run: |
+        echo "Starting local server..."
+        python3 -m http.server 8000 &
+        SERVER_PID=$!
+        sleep 2
+        
+        echo "Testing if website loads..."
+        curl -f http://localhost:8000/ > /dev/null || exit 1
+        
+        kill $SERVER_PID
+        echo "✓ Website loads successfully"

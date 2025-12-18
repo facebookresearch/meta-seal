@@ -1,0 +1,588 @@
+<!-- Copyright (c) Meta Platforms, Inc. and affiliates. All rights reserved. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <title>Meta Seal - State-of-the-Art Open Source AI Watermarking</title>
+  <meta name="title" content="Meta Seal - State-of-the-Art Open Source AI Watermarking">
+  <meta name="description" content="Open-source framework for invisible, robust watermarking across audio, image, video, and text. State-of-the-art AI watermarking from Meta's FAIR team.">
+  <meta name="keywords" content="AI watermarking, AudioSeal, VideoSeal, watermark detection, generative AI, Meta AI research, invisible watermarking, content authentication, deepfake detection">
+  <meta name="author" content="FAIR, Meta Superintelligence Labs">
+  <link rel="canonical" href="https://facebookresearch.github.io/meta-seal/">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://facebookresearch.github.io/meta-seal/">
+  <meta property="og:site_name" content="Meta Seal">
+  <meta property="og:title" content="Meta Seal - State-of-the-Art Open Source AI Watermarking">
+  <meta property="og:description" content="Open-source framework for invisible, robust watermarking across audio, image, video, and text. State-of-the-art AI watermarking from Meta's FAIR team.">
+  <meta property="og:image" content="static/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://facebookresearch.github.io/meta-seal/">
+  <meta name="twitter:title" content="Meta Seal - State-of-the-Art Open Source AI Watermarking">
+  <meta name="twitter:description" content="Open-source framework for invisible, robust watermarking across audio, image, video, and text. State-of-the-art AI watermarking from Meta's FAIR team.">
+  <meta name="twitter:image" content="static/images/og-image.png">
+  <meta name="twitter:site" content="@MetaAI">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="static/images/meta-favicon.png">
+  <link rel="apple-touch-icon" href="static/images/meta-favicon.png">
+  <link data-default-icon="https://static.xx.fbcdn.net/rsrc.php/y5/r/m4nf26cLQxS.ico" rel="shortcut icon" href="https://static.xx.fbcdn.net/rsrc.php/y5/r/m4nf26cLQxS.ico">
+  
+  <!-- Structured Data for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Meta Seal",
+    "applicationCategory": "DeveloperApplication",
+    "description": "Open-source framework for invisible, robust watermarking across audio, image, video, and text modalities",
+    "url": "https://facebookresearch.github.io/meta-seal/",
+    "author": {
+      "@type": "Organization",
+      "name": "FAIR, Meta Superintelligence Labs",
+      "url": "https://ai.meta.com/research/"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "operatingSystem": "Cross-platform"
+  }
+  </script>
+  
+  <!-- Font Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- YAML Parser for content.yaml (local copy) -->
+  <script src="static/js/js-yaml.min.js"></script>
+  
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<header class="nav">
+  <div class="container">
+    <a href="/" class="logo">
+      <img src="static/images/meta-logo.svg" alt="Meta" class="logo-svg" />
+    </a>
+    <nav>
+      <a href="#research">Read the Papers</a>
+      <a href="#code">Get the Models</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <video muted loop playsinline class="hero-video" data-src="assets/banner_vid2.mp4" poster="assets/banner_vid2.jpg" preload="none">
+    <source data-src="assets/banner_vid2.mp4" type="video/mp4">
+  </video>
+  <div class="container">
+    <span class="hero-eyebrow">Introducing Meta Seal</span>
+    <h1 class="txt-display">State-of-the-Art, Open Source Invisible Watermarking</h1>
+    <p class="txt-lead">
+      A state-of-the-art, open-source framework for invisible, robust watermarking across all modalities audio, image, video, and text. This suite spans the entire generative lifecycle, from training data and inference to generated media.
+    </p>
+    <div class="buttons">
+      <a href="#research" class="btn-primary">Read the Research Papers</a>
+      <a href="#code" class="btn-secondary">Get the Models</a>
+    </div>
+  </div>
+</section>
+
+<!-- Sticky Navigation -->
+<nav class="sticky-sub-nav">
+  <div class="container sticky-sub-nav-content">
+    <a href="#research" class="active">Research</a>
+    <a href="#code">Get the Models</a>
+    <a href="#watermarking-in-action">Watermarking in Action</a>
+  </div>
+</nav>
+
+<!-- Research Section: Interactive Scientific Archive -->
+<section class="content-section" id="research">
+  <div class="container research-container">
+    <!-- Eyebrow -->
+    <span class="research-eyebrow">Research Overview</span>
+    
+    <!-- Title -->
+    <h2>Watermarking across all modalities</h2>
+    
+    <!-- Description -->
+    <p class="research-desc">Meta Seal offers state-of-the-art, open-source tools for embedding robust and imperceptible watermarks across images, video, audio, text, and generative AI models. As AI-generated content becomes increasingly sophisticated, provenance tracking and authentication mechanisms are more critical than ever.</p>
+    
+    <!-- Navigation Pills -->
+    <div class="research-nav">
+      <button class="research-pill active" data-panel="posthoc">Post-hoc WM</button>
+      <button class="research-pill" data-panel="in-model">Generative WM</button>
+      <button class="research-pill" data-panel="training">Dataset WM</button>
+      <button class="research-pill" data-panel="security">Security</button>
+    </div>
+
+    <!-- Panel: Post-Hoc (Default Active) -->
+    <div id="panel-posthoc" class="research-panel active">
+      <h3 class="research-headline" style="text-align: left; margin-bottom: 16px;">Post-hoc watermarking</h3>
+      <p style="text-align: left; color: #6B7280; font-size: 16px; line-height: 1.6; margin-bottom: 32px; max-width: 800px;">Watermarks applied <strong>after content generation</strong> by any model or system. This model-agnostic approach works universally across images, video, audio, and text—no matter how the content was created. Perfect for protecting existing content and third-party generated media.</p>
+      
+      <!-- Visual Preview -->
+      <div class="research-visual-preview">
+        <video muted loop playsinline data-src="assets/2025-12-posthoc.mp4" poster="assets/2025-12-posthoc.jpg" preload="none">
+          <source data-src="assets/2025-12-posthoc.mp4" type="video/mp4">
+        </video>
+      </div>
+      
+      <!-- Modality Categories -->
+      <div class="research-categories">
+        
+        <!-- Image & Video Category -->
+        <div class="research-category">
+          <div class="category-header" onclick="toggleCategory(this)">
+            <div class="category-title">
+              <span class="category-icon">🎬</span>
+              <h4>Image & Video</h4>
+            </div>
+            <span class="category-toggle">+</span>
+          </div>
+          <div class="category-content expanded">
+            <!-- Featured Papers -->
+            <div class="paper-item featured">
+              <h5>Pixel&nbsp;Seal</h5>
+              <div class="paper-content-row">
+                <p>Flagship image & video watermarking model SOTA in terms of robustness and imperceptibility, which is built with a better and more stable adversarial-only training paradigm.</p>
+                <div class="paper-actions">
+                  <a href="https://ai.meta.com/research/publications/pixel-seal-adversarial-only-training-for-invisible-image-and-video-watermarking/" class="research-btn-labeled">📄 Paper</a>
+                  <a href="https://github.com/facebookresearch/videoseal" class="research-btn-labeled">💻 Code</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="paper-item featured">
+              <h5>Chunky&nbsp;Seal</h5>
+              <div class="paper-content-row">
+                <p>Bigger model with 4× capacity boost to 1024 bits while preserving quality and robustness.</p>
+                <div class="paper-actions">
+                  <a href="https://arxiv.org/abs/2510.12812" class="research-btn-labeled">📄 Paper</a>
+                  <a href="https://github.com/facebookresearch/videoseal" class="research-btn-labeled">💻 Code</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="paper-item featured">
+              <h5>Video&nbsp;Seal</h5>
+              <div class="paper-content-row">
+                <p>Extension of image watermarking models to video, resilient to editing and video codecs.</p>
+                <div class="paper-actions">
+                  <a href="https://arxiv.org/abs/2412.09492" class="research-btn-labeled">📄 Paper</a>
+                  <a href="https://github.com/facebookresearch/videoseal" class="research-btn-labeled">💻 Code</a>
+                  <a href="https://aidemos.meta.com/videoseal" class="research-btn-labeled">▶️ Demo</a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Additional Papers (collapsed by default) -->
+            <div class="additional-papers">
+              <div class="paper-item">
+                <h5>WAM <span class="paper-subtitle">(Watermark Anything Model)</span></h5>
+                <div class="paper-content-row">
+                  <p>Embed (possibly multiple) localized watermarks into images, survives inpainting and splicing attacks.</p>
+                  <div class="paper-actions">
+                    <a href="https://arxiv.org/abs/2411.07231" class="research-btn-labeled">📄 Paper</a>
+                    <a href="https://github.com/facebookresearch/wam" class="research-btn-labeled">💻 Code</a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="paper-item">
+                <h5>Sync&nbsp;Seal</h5>
+                <div class="paper-content-row">
+                  <p>Watermarking models for robust image synchronization, enabling to revert geometric transformations applied to image.</p>
+                  <div class="paper-actions">
+                    <a href="https://arxiv.org/abs/2509.15208" class="research-btn-labeled">📄 Paper</a>
+                    <a href="https://github.com/facebookresearch/watermark-anything" class="research-btn-labeled">💻 Code</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <button class="show-more-btn" onclick="toggleAdditionalPapers(this)">Show 2 more papers ↓</button>
+          </div>
+        </div>
+
+        <!-- Audio Category -->
+        <div class="research-category">
+          <div class="category-header" onclick="toggleCategory(this)">
+            <div class="category-title">
+              <span class="category-icon">🎵</span>
+              <h4>Audio</h4>
+            </div>
+            <span class="category-toggle">+</span>
+          </div>
+          <div class="category-content expanded">
+            <div class="paper-item featured">
+              <h5>Audio&nbsp;Seal & Audio&nbsp;Seal Streaming</h5>
+              <div class="paper-content-row">
+                <p>Localized audio watermarking with sample-level detection and streaming support for real-time applications.</p>
+                <div class="paper-actions">
+                  <a href="https://arxiv.org/abs/2401.17264" class="research-btn-labeled">📄 Paper</a>
+                  <a href="https://github.com/facebookresearch/audioseal" class="research-btn-labeled">💻 Code</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text Category -->
+        <div class="research-category">
+          <div class="category-header" onclick="toggleCategory(this)">
+            <div class="category-title">
+              <span class="category-icon">📝</span>
+              <h4>Text</h4>
+            </div>
+            <span class="category-toggle">+</span>
+          </div>
+          <div class="category-content expanded">
+            <div class="paper-item featured">
+              <h5>Text&nbsp;Seal</h5>
+              <div class="paper-content-row">
+                <p>Comprehensive evaluation framework for post-hoc text watermarking with LLM rephrasing.</p>
+                <div class="paper-actions">
+                  <a href="https://ai.meta.com/research/publications/how-good-is-post-hoc-watermarking-with-language-model-rephrasing/" class="research-btn-labeled">📄 Paper</a>
+                  <a href="https://github.com/facebookresearch/textseal" class="research-btn-labeled">💻 Code</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Panel: In-Model & Gen -->
+    <div id="panel-in-model" class="research-panel">
+      <h3 class="research-headline" style="text-align: left; margin-bottom: 16px;">In-model & generation-time watermarking</h3>
+      <p style="text-align: left; color: #6B7280; font-size: 16px; line-height: 1.6; margin-bottom: 32px; max-width: 800px;">Watermarks embedded <strong>during the generation process</strong> by modifying the model's  latent representations or embedding the watermark directly in the model weights. This native approach enables seamless integration with diffusion models, LLMs, and other generative systems for real-time watermarking as content is created.</p>
+      
+      <!-- Visual Preview -->
+      <div class="research-visual-preview">
+        <video muted loop playsinline data-src="assets/2025-12-inmodel.mp4" poster="assets/2025-12-inmodel.jpg" preload="none">
+          <source data-src="assets/2025-12-inmodel.mp4" type="video/mp4">
+        </video>
+      </div>
+      
+      <!-- Papers List -->
+      <div class="papers-list">
+        <div class="paper-item-flat">
+          <div class="paper-header">
+            <h5>Dist&nbsp;Seal</h5>
+          </div>
+          <div class="paper-description-row">
+            <p>Unified latent space watermarking that enables 20× speedup over pixel methods and secures open-source models via in-model distillation.</p>
+            <div class="paper-actions-inline">
+              <a href="https://ai.meta.com/research/publications/distilling-latent-space-watermarkers-into-generative-image-models/" class="research-btn-labeled">📄 Paper</a>
+              <a href="https://github.com/facebookresearch/distseal" class="research-btn-labeled">💻 Code</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="paper-item-flat">
+          <div class="paper-header">
+            <h5>Stable Signature</h5>
+          </div>
+          <div class="paper-description-row">
+            <p>Roots the watermark in the model's latent decoder for tracing the outputs of latent generative models.</p>
+            <div class="paper-actions-inline">
+              <a href="https://arxiv.org/abs/2303.15435" class="btn-minimal">📄 Paper</a>
+              <a href="https://github.com/facebookresearch/stable_signature" class="btn-minimal">💻 Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="paper-item-flat">
+          <div class="paper-header">
+            <h5>WMAR</h5>
+          </div>
+          <div class="paper-description-row">
+            <p>Watermarking for autoregressive image generation models.</p>
+            <div class="paper-actions-inline">
+              <a href="https://arxiv.org/abs/2506.16349" class="btn-minimal">📄 Paper</a>
+              <a href="https://github.com/facebookresearch/wmar" class="btn-minimal">💻 Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel: Training Data -->
+    <div id="panel-training" class="research-panel">
+      <h3 class="research-headline" style="text-align: left; margin-bottom: 16px;">Dataset watermarking</h3>
+      <p style="text-align: left; color: #6B7280; font-size: 16px; line-height: 1.6; margin-bottom: 32px; max-width: 800px;">Watermarks embedded <strong>into training datasets</strong> to track data provenance and usage. This technique enables dataset creators to verify if their data was used to train specific models, providing accountability and attribution in the AI training pipeline.</p>
+      
+      <!-- Visual Preview -->
+      <div class="research-visual-preview">
+        <video muted loop playsinline data-src="assets/2025-12-data.mp4" poster="assets/2025-12-data.jpg" preload="none">
+          <source data-src="assets/2025-12-data.mp4" type="video/mp4">
+        </video>
+      </div>
+      
+      <!-- Papers List -->
+      <div class="papers-list">
+        <div class="paper-item-flat">
+          <div class="paper-header">
+            <h5>Radioactive watermarks</h5>
+          </div>
+          <div class="paper-description-row">
+            <p>Designed to detect if a language model was trained on synthetic text by detecting weak residuals of watermark signals in fine-tuned LLMs, with high confidence detection even when as little as 5% of training text is watermarked.</p>
+            <div class="paper-actions-inline">
+              <a href="https://arxiv.org/abs/2402.14904" class="btn-minimal">📄 Paper</a>
+              <a href="https://github.com/facebookresearch/radioactive-watermark" class="btn-minimal">💻 Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="paper-item-flat">
+          <div class="paper-header">
+            <h5>Detecting benchmark contamination through watermarking</h5>
+          </div>
+          <div class="paper-description-row">
+            <p>Watermarks benchmarks before release to detect if models were trained on test sets, using theoretically grounded statistical tests to identify contamination while preserving benchmark utility.</p>
+            <div class="paper-actions-inline">
+              <a href="https://arxiv.org/abs/2502.17259" class="btn-minimal">📄 Paper</a>
+              <a href="https://github.com/facebookresearch/textseal" class="btn-minimal">💻 Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel: Watermark Security -->
+    <div id="panel-security" class="research-panel">
+      <h3 class="research-headline" style="text-align: left; margin-bottom: 16px;">Watermark security</h3>
+      <p style="text-align: left; color: #6B7280; font-size: 16px; line-height: 1.6; margin-bottom: 32px; max-width: 800px;">Research on <strong>adversarial attacks and defenses</strong> for watermarking systems. Red teaming efforts explore vulnerabilities like watermark removal, forgery, and spoofing attacks—while developing robust countermeasures to help watermarks remain secure and reliable.</p>
+      
+      <!-- Visual Preview -->
+
+      <!-- Visual Preview -->
+      <div class="research-visual-preview">
+        <video muted loop playsinline data-src="assets/2025-12-forger.mp4" poster="assets/2025-12-forger.jpg" preload="none">
+          <source data-src="assets/2025-12-forger.mp4" type="video/mp4">
+        </video>
+      </div>
+      
+      <!-- Papers List -->
+      <div class="papers-list">
+        <div class="paper-item-flat">
+          <div class="paper-header">
+            <h5>WMForger</h5>
+          </div>
+          <div class="paper-description-row">
+            <p>Black-box watermark forging using image preference models for red-teaming watermarking systems.</p>
+            <div class="paper-actions-inline">
+              <a href="https://arxiv.org/abs/2510.20468" class="btn-minimal">📄 Paper</a>
+              <a href="https://github.com/facebookresearch/videoseal/tree/main/wmforger" class="btn-minimal">💻 Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Code / Getting Started Section -->
+<section class="content-section" id="code">
+  <div class="container code-container">
+    <!-- Eyebrow -->
+    <span class="code-eyebrow">Try it yourself</span>
+    
+    <!-- Title -->
+    <h2>Get the Models</h2>
+    
+    <!-- Description -->
+    <p class="code-desc">Access our official research implementations. Open weights, MIT Licensed, and designed for immediate scientific exploration.</p>
+    
+    <!-- Repository Links -->
+    <div class="repo-links">
+      <a href="https://github.com/facebookresearch/videoseal" target="_blank" rel="noopener">
+        Video&nbsp;Seal
+        <svg class="github-icon" viewBox="0 0 16 16" version="1.1" aria-hidden="true">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+        </svg>
+      </a>
+
+      <a href="https://github.com/facebookresearch/audioseal" target="_blank" rel="noopener">
+        Audio&nbsp;Seal
+        <svg class="github-icon" viewBox="0 0 16 16" version="1.1" aria-hidden="true">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+        </svg>
+      </a>
+
+      <a href="https://github.com/facebookresearch/textseal" target="_blank" rel="noopener">
+        Text&nbsp;Seal
+        <svg class="github-icon" viewBox="0 0 16 16" version="1.1" aria-hidden="true">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+        </svg>
+      </a>
+    </div>
+    
+    <!-- Animated Terminal with Typewriter and Falling Bits -->
+    <div class="terminal-wrapper">
+      <div class="terminal-window" id="terminal-window">
+        <!-- Terminal Header -->
+        <div class="terminal-header">
+          <div class="terminal-controls">
+            <div style="width: 12px; height: 12px; border-radius: 50%; background-color: #ff5f56;"></div>
+            <div style="width: 12px; height: 12px; border-radius: 50%; background-color: #ffbd2e;"></div>
+            <div style="width: 12px; height: 12px; border-radius: 50%; background-color: #27c93f;"></div>
+          </div>
+          <span class="terminal-title">watermark_detect.py</span>
+        </div>
+        
+        <!-- Terminal Body with Code -->
+        <div class="terminal-body">
+          <code id="code-display"><span class="cursor" id="cursor"></span></code>
+        </div>
+        
+        <!-- Bits Layer -->
+        <div id="bits-layer"></div>
+      </div>
+    </div>
+    
+    <!-- Quick Install section removed -->
+    
+    <!-- Detailed Code Examples -->
+    <div id="code-examples" class="code-examples">
+      <!-- Content loading disabled -->
+    </div>
+  </div>
+</section>
+
+<!-- styles moved to static/css/index.css -->
+
+<!-- Applications -->
+<section class="content-section" id="watermarking-in-action">
+  <div class="container apps-container">
+    <!-- Header Section -->
+    <div class="apps-header">
+      <!-- Eyebrow -->
+      <span class="apps-eyebrow">APPLICATIONS</span>
+      
+      <!-- Title -->
+      <h2>Watermarking in Action at Meta</h2>
+      
+      <!-- Description -->
+      <p class="section-desc">
+        Explore real-world applications and learn how invisible watermarking addresses content provenance challenges across media platforms.
+      </p>
+    </div>
+    
+    <!-- Carousel Section -->
+    <div class="carousel-wrapper">
+      <!-- Left Arrow -->
+      <button id="carousel-prev" class="carousel-nav-btn">
+        <span class="carousel-arrow">←</span>
+      </button>
+      
+      <!-- Card Container -->
+      <div id="carousel-container">
+        <div class="carousel-list">
+          
+          <!-- Card 1: Content Provenance & Attribution -->
+          <div class="carousel-card">
+            <div class="carousel-card-media">
+              <img src="static/images/eng2_originality.png" alt="Content Provenance & Attribution">
+            </div>
+            <div class="carousel-card-content">
+              <h3>Watermarking at Scale</h3>
+              <p>Learn how Meta scaled invisible watermarking from research to production, addressing real-world challenges including originality protection on Instagram and detecting AI-generated videos. <a href="https://engineering.fb.com/2025/11/04/video-engineering/video-invisible-watermarking-at-scale/" target="_blank">Read the engineering blog</a>.</p>
+            </div>
+          </div>
+
+          <!-- Card 2: Seamless Interaction Dataset -->
+          <div class="carousel-card">
+            <div class="carousel-card-media">
+              <img src="static/images/seamless_interaction.jpg" alt="Seamless Interaction Dataset">
+            </div>
+            <div class="carousel-card-content">
+              <h3>Seamless Interaction Dataset</h3>
+              <p>Audio&nbsp;Seal and Video&nbsp;Seal watermark 4,000+ hours of dyadic conversations with streaming capability and robust detection for AI-generated content. <a href="https://ai.meta.com/research/seamless-interaction/" target="_blank">Explore dataset</a>.</p>
+            </div>
+          </div>
+
+          <!-- Card 3: Llama AI Defenders -->
+          <div class="carousel-card">
+            <div class="carousel-card-media">
+              <img src="static/images/llama_defenders.webp" alt="Llama AI Defenders">
+            </div>
+            <div class="carousel-card-content">
+              <h3>Llama AI Defenders</h3>
+              <p>Audio watermarking and detection technology that provides industry-leading detection performance on accuracy, imperceptibility, and speed. <a href="https://www.llama.com/llama-protections/ai-defenders/" target="_blank">Learn more</a>.</p>
+            </div>
+          </div>
+
+          <!-- Card 4: GenAI Transparency -->
+          <div class="carousel-card">
+            <div class="carousel-card-media">
+              <img src="static/images/Transparency-Labels-for-Ads_Header.jpg" alt="GenAI Transparency">
+            </div>
+            <div class="carousel-card-content">
+              <h3>GenAI Transparency</h3>
+              <p>Meta uses invisible watermarking to enable transparency labels on AI-generated content across Facebook, Instagram, and Threads. Learn about <a href="https://about.fb.com/news/2024/02/labeling-ai-generated-images-on-facebook-instagram-and-threads/" target="_blank">AI-generated image labeling</a> and <a href="https://about.fb.com/news/2025/02/gen-ai-transparency-metas-ads-products/" target="_blank">transparency in ads</a>.</p>
+            </div>
+          </div>
+          
+
+          
+        </div>
+      </div>
+      
+      <!-- Right Arrow -->
+      <button id="carousel-next" class="carousel-nav-btn">
+        <span class="carousel-arrow">→</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="static/images/meta-logo.svg" alt="Meta">
+      </div>
+      <div class="footer-copyright">
+        <p>© 2025 Meta. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Externalized scripts -->
+<script src="static/js/typewriter.js"></script>
+<script src="static/js/nav-active.js"></script>
+<script src="static/js/research-tabs.js"></script>
+<script src="static/js/category-accordion.js"></script>
+<script src="static/js/carousel.js"></script>
+  <script src="static/js/lazy-videos.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Content.yaml loading disabled
+    // if (typeof window.loadContent === 'function') window.loadContent();
+    if (typeof window.typeWriter === 'function') window.typeWriter();
+    // lazy-videos.js will auto-initialize on DOMContentLoaded; manual init available at window.initLazyVideos
+  });
+</script>
+
+</body>
+</html>
