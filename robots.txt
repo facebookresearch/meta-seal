@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://facebookresearch.github.io/meta-seal/sitemap.xml
