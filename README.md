@@ -75,7 +75,7 @@ Watermarks applied **after content generation** by any model or system. Model-ag
 
 | Model | Description | Resources |
 |-------|-------------|-----------|
-| **TextSeal** | Comprehensive evaluation framework for post-hoc text watermarking with LLM rephrasing | [Paper](https://ai.meta.com/research/publications/how-good-is-post-hoc-watermarking-with-language-model-rephrasing/) • [Code](https://github.com/facebookresearch/textseal) |
+| **TextSeal** | Comprehensive evaluation framework for post-hoc text watermarking with LLM rephrasing | [Paper](https://arxiv.org/abs/2512.16904) • [Code](https://github.com/facebookresearch/textseal) |
 
 ---
 
