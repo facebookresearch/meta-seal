@@ -51,10 +51,10 @@ Watermarks applied **after content generation** by any model or system. Model-ag
 
 | Model | Description | Resources |
 |-------|-------------|-----------|
-| **PixelSeal** | 🏆 Flagship image & video watermarking model SOTA in terms of robustness and imperceptibility, built with a better and more stable adversarial-only training paradigm | [Code](https://github.com/facebookresearch/videoseal) |
+| **PixelSeal** | 🏆 Flagship image & video watermarking model SOTA in terms of robustness and imperceptibility, built with a better and more stable adversarial-only training paradigm | [Paper](https://ai.meta.com/research/publications/pixel-seal-adversarial-only-training-for-invisible-image-and-video-watermarking/) • [Code](https://github.com/facebookresearch/videoseal) |
 | **ChunkySeal** | Bigger model with 4× capacity boost to 1024 bits while preserving quality and robustness | [Paper](https://arxiv.org/abs/2510.12812) • [Code](https://github.com/facebookresearch/videoseal) |
-| **VideoSeal** | Extension of image watermarking models to video, resilient to editing and video codecs | [Paper](https://arxiv.org/abs/2412.09492) • [Code](https://github.com/facebookresearch/videoseal) [▶️ Demo](https://aidemos.meta.com/videoseal) |
-| **WAM** | Embed (possibly multiple) localized watermarks into images, survives inpainting and splicing attacks | [Paper](https://arxiv.org/abs/2411.07231) • [Code](https://github.com/facebookresearch/wam) |
+| **VideoSeal** | Extension of image watermarking models to video, resilient to editing and video codecs | [Paper](https://arxiv.org/abs/2412.09492) • [Code](https://github.com/facebookresearch/videoseal) • [▶️ Demo](https://aidemos.meta.com/videoseal) |
+| **WAM** | Embed (possibly multiple) localized watermarks into images, survives inpainting and splicing attacks | [Paper](https://arxiv.org/abs/2411.07231) • [Code](https://github.com/facebookresearch/watermark-anything) |
 | **SyncSeal** | Watermarking models for robust image synchronization, enabling to revert geometric transformations applied to image | [Paper](https://arxiv.org/abs/2509.15208) • [Code](https://github.com/facebookresearch/watermark-anything) |
 
 ### Audio Models
@@ -67,7 +67,7 @@ Watermarks applied **after content generation** by any model or system. Model-ag
 
 | Model | Description | Resources |
 |-------|-------------|-----------|
-| **TextSeal** | Comprehensive evaluation framework for post-hoc text watermarking with LLM rephrasing | [Code](https://github.com/facebookresearch/textseal) |
+| **TextSeal** | Comprehensive evaluation framework for post-hoc text watermarking with LLM rephrasing | [Paper](https://ai.meta.com/research/publications/how-good-is-post-hoc-watermarking-with-language-model-rephrasing/) • [Code](https://github.com/facebookresearch/textseal) |
 
 ---
 
@@ -83,9 +83,9 @@ Watermarks embedded **during content generation** by modifying model behavior or
 
 | Model | Description | Resources |
 |-------|-------------|-----------|
-| **DISTSEAL** | Unified latent space watermarking that enables 20× speedup over pixel methods and secures open-source models via in-model distillation | [Code](https://github.com/facebookresearch/distseal) |
+| **DISTSEAL** | Unified latent space watermarking that enables 20× speedup over pixel methods and secures open-source models via in-model distillation | [Paper](https://ai.meta.com/research/publications/distilling-latent-space-watermarkers-into-generative-image-models/) • [Code](https://github.com/facebookresearch/distseal) |
 | **Stable Signature** | Roots the watermark in the model's latent decoder for tracing the outputs of latent generative models | [Paper](https://arxiv.org/abs/2303.15435) • [Code](https://github.com/facebookresearch/stable_signature) |
-| **WMAR** | Watermarking for autoregressive image generation models | [Code](https://github.com/facebookresearch/wmar) |
+| **WMAR** | Watermarking for autoregressive image generation models | [Paper](https://arxiv.org/abs/2506.16349) • [Code](https://github.com/facebookresearch/wmar) |
 
 ---
 
@@ -99,7 +99,7 @@ Watermarks embedded **into training datasets** to track data provenance and dete
 
 | Research | Description | Resources |
 |----------|-------------|-----------|
-| **Radioactive watermarks** | Reliably determines if a language model was trained on synthetic text by detecting weak residuals of watermark signals in fine-tuned LLMs, with high confidence detection even when as little as 5% of training text is watermarked | [Paper](https://arxiv.org/abs/2402.14904) • [Code](https://github.com/facebookresearch/radioactive-watermark) |
+| **Radioactive watermarks** | Designed to detect if a language model was trained on synthetic text by detecting weak residuals of watermark signals in fine-tuned LLMs, with high confidence detection even when as little as 5% of training text is watermarked | [Paper](https://arxiv.org/abs/2402.14904) • [Code](https://github.com/facebookresearch/radioactive-watermark) |
 | **Detecting benchmark contamination through watermarking** | Watermarks benchmarks before release to detect if models were trained on test sets, using theoretically grounded statistical tests to identify contamination while preserving benchmark utility | [Paper](https://arxiv.org/abs/2502.17259) • [Code](https://github.com/facebookresearch/textseal) |
 
 ---
