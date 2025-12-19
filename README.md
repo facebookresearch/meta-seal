@@ -5,6 +5,14 @@
 # Meta Seal
 ## State-of-the-Art, Open Source Invisible Watermarking
 
+---
+
+### 🌐 **[Visit the Meta Seal Website →](https://facebookresearch.github.io/meta-seal)**
+
+**Explore research papers, interactive demos, and comprehensive documentation**
+
+---
+
 </div>
 
 
